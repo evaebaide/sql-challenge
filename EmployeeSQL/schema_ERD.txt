@@ -1,0 +1,135 @@
+# Simple Conceptual ERD
+departments
+-
+dept_no
+dept_name
+
+dept_emp
+-
+emp_no
+dept_no
+from_date
+to_date
+
+dept_manager
+-
+dept_no
+emp_no
+from_date
+to_date
+
+employees
+-
+emp_no
+birth_date
+first_name
+last_name
+gender
+hire_date
+
+salaries
+-
+emp_no
+salary
+from_date
+to_date
+
+titles
+-
+emp_no
+title
+from_date
+to_date
+
+# Logical ERD
+departments
+-
+dept_no VARCHAR 
+dept_name VARCHAR
+
+dept_emp
+-
+emp_no INTEGER PK
+dept_no VARCHAR
+from_date DATE
+to_date DATE
+
+dept_manager
+-
+dept_no VARCHAR
+emp_no INTEGER PK
+from_date DATE
+to_date DATE
+
+employees
+-
+emp_no INTEGER PK
+birth_date DATE
+first_name VARCHAR
+last_name VARCHAR
+gender CHAR
+hire_date DATE
+
+salaries
+-
+emp_no INTEGER PK
+salary INTEGER
+from_date DATE
+to_date DATE
+
+titles
+-
+emp_no INTEGER PK
+title VARCHAR
+from_date DATE
+to_date DATE
+
+# Physical Relationships
+departments
+-
+dept_emp_dept_no VARCHAR FK - Dept_emp.dept_no
+dept_no VARCHAR
+dept_name VARCHAR
+
+dept_emp
+-
+employees_emp_no INT FK - employees.emp_no
+emp_no INT PK
+dept_no VARCHAR
+from_date DATE
+to_date DATE
+
+dept_manager
+-
+employees_emp_no INT FK - employees.emp_no
+emp_no INT PK
+dept_no VARCHAR
+from_date DATE
+to_date DATE
+
+employees
+-
+dept_emp_emp_no INT FK - dept_emp.emp_no
+emp_no INT PK
+birth_date DATE
+first_name VARCHAR
+last_name VARCHAR
+gender CHAR
+hire_date DATE
+
+salaries
+-
+titles_emp_no INT FK - titles.emp_no
+employees_emp_no INT FK - employees.emp_no
+emp_no INT PK
+salary INT
+from_date DATE
+to_date DATE
+
+titles
+-
+salaries_emp_no INT FK - salaries.emp_no
+emp_no INT PK
+title VARCHAR
+from_date DATE
+to_date DATE

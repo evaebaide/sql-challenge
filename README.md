@@ -1,4 +1,4 @@
-# SQL - Employee Database: A Mystery in Two Parts
+# SQL - Employee Database: 
 
 
 ## Background
